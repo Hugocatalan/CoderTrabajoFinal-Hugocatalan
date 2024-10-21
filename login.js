@@ -23,14 +23,14 @@ function mostrarMensaje(elemento, mensaje, esError = false) {
     mensajeElemento.textContent = mensaje;
 }
 
-// Función para mostrar el formulario seleccionado y ocultar el menú
+// Mostrar el formulario seleccionado y ocultar el menú
 function mostrarFormulario(formularioId, titulo) {
     document.getElementById("menu").style.display = "none";  // Ocultar el menú
     document.getElementById("tituloPrincipal").textContent = titulo;  // Cambiar el título
     document.getElementById(formularioId).style.display = "block";  // Mostrar el formulario seleccionado
 }
 
-// Función para volver al menú principal
+// Volver al menú principal
 function volverAlMenu() {
     document.getElementById("registroForm").style.display = "none";
     document.getElementById("loginForm").style.display = "none";
@@ -38,7 +38,7 @@ function volverAlMenu() {
     document.getElementById("tituloPrincipal").textContent = "Registro e Inicio de Sesión";  // Restaurar título
 }
 
-// Función para registrar un usuario
+// Registro 
 function registrarUsuario() {
     const nombre = document.getElementById("nombreRegistro").value;
     const contraseña = document.getElementById("contraseñaRegistro").value;
@@ -55,13 +55,13 @@ function registrarUsuario() {
     } else {
         usuarios.push({ nombre, contraseña });
         mostrarMensaje('mensajeRegistro', mensajes.usuarioRegistrado(nombre));
-        // Limpiar campos después de registrar
+        // Limpiar formulaario después de registrar
         document.getElementById("nombreRegistro").value = "";
         document.getElementById("contraseñaRegistro").value = "";
     }
 }
 
-// Función para iniciar sesión
+// Iniciar sesión
 function iniciarSesion() {
     const nombre = document.getElementById("nombreLogin").value;
     const contraseña = document.getElementById("contraseñaLogin").value;
@@ -77,11 +77,17 @@ function iniciarSesion() {
 
     if (usuarioEncontrado) {
         mostrarMensaje('mensajeLogin', mensajes.accesoConcedido(nombre));
+
+         // Redirigir a la pagina Bienvenida en este caso a index
+         setTimeout(() => {
+            window.location.href = "index.html";
+        }, 1000);  // Redirige después de 1 segundo
+
     } else {
         intentosFallidos++;
         mostrarMensaje('mensajeLogin', `${mensajes.usuarioIncorrecto} ${mensajes.intentosRestantes(intentosFallidos)}`, true);
         
-        // Limpiar campos si el inicio de sesión falla
+        // Limpiar el forrmulario si el inicio de sesión falla
         document.getElementById("nombreLogin").value = "";
         document.getElementById("contraseñaLogin").value = "";
 
