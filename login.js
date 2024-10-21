@@ -60,12 +60,12 @@ function registrarUsuario() {
         document.getElementById("contraseñaRegistro").value = "";
     }
 }
-
+let intentosFallidos = 0;
 // Iniciar sesión
 function iniciarSesion() {
     const nombre = document.getElementById("nombreLogin").value;
     const contraseña = document.getElementById("contraseñaLogin").value;
-    let intentosFallidos = 0;
+    
     let accesoConcedido = false;
 
     if (!nombre || !contraseña) {
