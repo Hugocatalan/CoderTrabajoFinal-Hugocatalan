@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/productos.css">
+    <title>Productos</title>
+</head>
+<body>
+    
+        <!-- Barra de navegacion -->
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">Mi Sitio Web</div>
+            <div class="navbar-login">
+                <div class="navbar-menu">
+                    <a href="../index.html">Inicio</a>
+                    <a href="#productos">Productos</a>
+                    <a href="#contacto">Contacto</a>
+                </div>
+                <a href="" id="modal-abrir">
+                    <img src="../img/loginmanager_10029.png" alt="Login" class="login-icon">
+                </a>
+            </div>
+        </div>
+    </nav>
+
+       
+        <!-- Botón para agregar producto -->
+        <div class="agregar-producto-container">
+            <button id="btnAgregarProducto">Agregar Producto</button>
+        </div>
+    
+        <!-- Formulario para agregar producto -->
+        <div id="formularioContainer" style="display:none;">
+            <h2>Agregar Producto</h2>
+            <form>
+                <input type="text" id="nombre" placeholder="Nombre del Producto">
+                <input type="number" id="precio" placeholder="Precio">
+                <input type="number" id="stock" placeholder="Stock">
+                <input type="file" id="imagen">
+                <button type="button" id="btnCargarProducto">Cargar Producto</button>
+            </form>
+        </div>
+    
+        <!-- Contenedor de los últimos 3 productos -->
+        <div id="ultimosTres" class="productos-container"></div>
+    
+        <!-- Contenedor de todos los productos -->
+        <div id="todosProductos" class="productos-container"></div>
+    
+        <script src="../js/producto.js"></script>
+    
+    
+            
+</body>
+</html>

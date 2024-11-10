@@ -88,7 +88,7 @@ function iniciarSesion() {
     if (usuarioEncontrado) {
         mostrarMensaje('mensajeLogin', mensajes.accesoConcedido(nombre));
         setTimeout(() => {
-            window.location.href = "index.html";
+            window.location.href = "html/productos.html";
         }, 1000);
     } else {
         intentosFallidos++;

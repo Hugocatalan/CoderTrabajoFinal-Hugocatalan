@@ -24,7 +24,7 @@ body {
 
 .container {
     max-width: 400px;
-    width: 90%; /* Ajustado para que sea más visible en pantallas pequeñas */
+    width: 90%; 
     margin: 50px auto;
     background-color: white;
     padding: 20px;
@@ -63,5 +63,5 @@ button:hover {
 }
 
 .cerrar-modal:hover {
-    color: #003a8d; /* Cambiar el color al pasar el ratón */
+    color: #003a8d; 
 }

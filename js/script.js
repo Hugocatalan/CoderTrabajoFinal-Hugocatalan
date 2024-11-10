@@ -150,12 +150,6 @@ const mostrarTotal = () => {
     alert(resumenCompra + "Total a pagar: $" + total)
 }
 
-// de esta manera tomare una lista y mostrare los ultiimos 3 elementos subidos
-/*let productos = [1, 2, 3, 4, 'pero', 'casa', 'cebolla'];
-for (let i = 1; i <= 3; i++) {
-  console.log(productos[productos.length - i]);
-}*/
-
 
 
 mostrarMenu()

@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="login.css">
     <title>Inicio</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/login.css">
+    
 </head>
 <body>
     <nav class="navbar">
@@ -18,21 +19,56 @@
                     <a href="#contacto">Contacto</a>
                 </div>
                 <a href="" id="modal-abrir">
-                    <img src="loginmanager_10029.png" alt="Login" class="login-icon">
+                    <img src="./img/loginmanager_10029.png" alt="Login" class="login-icon">
                 </a>
             </div>
         </div>
     </nav>
-
+     <!-------------------- Modal--------------------------> 
+     <div id="modal-container" class="modal">
+        <div class="container">
+            <button id="modal-cerrar" class="cerrar-modal">x</button>
+            <h1 id="tituloPrincipal">Registro e Inicio de Sesión</h1>
+          
+            <!-- Menú para seleccionar Registro o Inicio -->
+            <div id="menu" class="form-container">
+                <button onclick="mostrarFormulario('registroForm')">Registrarse</button>
+                <button onclick="mostrarFormulario('loginForm', 'Iniciar Sesión')">Iniciar Sesión</button>
+            </div>
+    
+            <!-- Registro -->
+            <div id="registroForm" class="form-container" style="display: none;">
+                <h2>Registro</h2>
+                <form id="formRegistro" onsubmit="registrarUsuario(); return false;">
+                    <input type="text" id="nombreCompleto" placeholder="Nombre Completo">
+                    <input type="text" id="nombreRegistro" placeholder="Usuario">
+                    <input type="password" id="contraseñaRegistro" placeholder="Contraseña">
+                    <button type="submit">Registrar</button>
+                </form>
+                <p id="mensajeRegistro"></p>
+                <button onclick="volverAlMenu()">Volver</button>
+            </div>
+    
+            <!-- Formulario de Inicio de Sesión -->
+            <div id="loginForm" class="form-container" style="display: none;">
+                <h2>Iniciar Sesión</h2>
+                <form id="formLogin" onsubmit="iniciarSesion(); return false;">
+                    <input type="text" id="nombreLogin" placeholder="Nombre de usuario">
+                    <input type="password" id="contraseñaLogin" placeholder="Contraseña">
+                    <button type="submit">Iniciar Sesión</button>
+                </form>
+                <p id="mensajeLogin"></p>
+                <button onclick="volverAlMenu()">Volver</button>
+            </div>
+    
+            <!-- Mensaje global -->
+            <p id="mensajeGlobal"></p>
+        </div>
+    </div>
+    <h1 class="bienvenida">¡Hola a todos! Bienvenidos a <span>Mi Sitio Web</span></h1>
+    <p class="llamado-accion">¡Regístrate o inicia sesión para descubrir todo lo que tenemos para ti!</p>
+    
+   <script src="./js/login.js"> </script>
    
-
-    <!-------------------- Ultimos 3 productos cargados--------------------------> 
-    <div id="ultimosTres"></div>
-
-    <!-------------------- Todos los productos cargados--------------------------> 
-    <div id="todosProductos"></div>
-
-    <script src="login.js"> </script>
-    <script src="producto.js"> </script>
 </body>
 </html>
