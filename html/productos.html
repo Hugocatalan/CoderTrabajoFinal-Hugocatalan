@@ -10,7 +10,7 @@
 </head>
 <body>
     
-        <!-- Barra de navegacion -->
+    <!-- Barra de navegación -->
     <nav class="navbar">
         <div class="navbar-container">
             <div class="navbar-brand">Mi Sitio Web</div>
@@ -27,33 +27,41 @@
         </div>
     </nav>
 
-       
-        <!-- Botón para agregar producto -->
-        <div class="agregar-producto-container">
+    <!-- Botón para agregar producto -->
+    <div class="contenedorFila">
+        <div class="sumarProducto">
+            <p class="mas">+</p>
             <button id="btnAgregarProducto">Agregar Producto</button>
         </div>
+    </div>
+    <!-- Formulario para agregar producto -->
+    <div id="formularioContainer" style="display:none;">
+        <h2>Agregar Producto</h2>
+        <form>
+            <input type="text" id="nombre" placeholder="Nombre del Producto">
+            <input type="number" id="precio" placeholder="Precio">
+            <input type="number" id="stock" placeholder="Stock">
+            <input type="file" id="imagen">
+            <button type="button" id="btnCargarProducto">Cargar Producto</button>
+        </form>
+    </div>
     
-        <!-- Formulario para agregar producto -->
-        <div id="formularioContainer" style="display:none;">
-            <h2>Agregar Producto</h2>
-            <form>
-                <input type="text" id="nombre" placeholder="Nombre del Producto">
-                <input type="number" id="precio" placeholder="Precio">
-                <input type="number" id="stock" placeholder="Stock">
-                <input type="file" id="imagen">
-                <button type="button" id="btnCargarProducto">Cargar Producto</button>
-            </form>
-        </div>
+    <!-- Contenedor de los últimos 3 productos -->
+    <div id="ultimosTres" class="productos-container"></div>
     
-        <!-- Contenedor de los últimos 3 productos -->
-        <div id="ultimosTres" class="productos-container"></div>
+    <!-- Contenedor de todos los productos -->
+    <div id="todosProductos" class="productos-container"></div>
+
+    <!-- Carrito de compras -->
+    <div class="cart-container">
+        <h2>Carrito de Compras</h2>
+        <ul id="carrito" class="cart-items"></ul>
+        <p>Total: $<span id="totalCompra">0</span></p>
+        <button id="finalizarCompra" style="display:none;">Finalizar Compra</button>
+    </div>
+
+    <script src="../js/producto.js"></script>
     
-        <!-- Contenedor de todos los productos -->
-        <div id="todosProductos" class="productos-container"></div>
-    
-        <script src="../js/producto.js"></script>
-    
-    
-            
+
 </body>
 </html>
