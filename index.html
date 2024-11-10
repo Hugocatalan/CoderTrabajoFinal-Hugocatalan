@@ -1,12 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="login.css">
     <title>Inicio</title>
 </head>
 <body>
-    
-    <script src="script.js"></script>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">Mi Sitio Web</div>
+            <div class="navbar-login">
+                <div class="navbar-menu">
+                    <a href="#home">Inicio</a>
+                    <a href="#productos">Productos</a>
+                    <a href="#contacto">Contacto</a>
+                </div>
+                <a href="" id="modal-abrir">
+                    <img src="loginmanager_10029.png" alt="Login" class="login-icon">
+                </a>
+            </div>
+        </div>
+    </nav>
+
+   
+
+    <!-------------------- Ultimos 3 productos cargados--------------------------> 
+    <div id="ultimosTres"></div>
+
+    <!-------------------- Todos los productos cargados--------------------------> 
+    <div id="todosProductos"></div>
+
+    <script src="login.js"> </script>
+    <script src="producto.js"> </script>
 </body>
 </html>

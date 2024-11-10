@@ -5,9 +5,26 @@ body {
     padding: 0;
 }
 
+.modal {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s ease;
+}
+
+.modal-activo {
+    visibility: visible;
+    opacity: 1;
+}
+
 .container {
-    width: 100%;
     max-width: 400px;
+    width: 90%; /* Ajustado para que sea más visible en pantallas pequeñas */
     margin: 50px auto;
     background-color: white;
     padding: 20px;
@@ -19,7 +36,7 @@ h1, h2 {
     text-align: center;
 }
 
-input {
+input, button {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
@@ -28,33 +45,23 @@ input {
 }
 
 button {
-    width: 100%;
-    padding: 10px;
     background-color: #004FB4;
     color: white;
-    border: none;
-    border-radius: 5px;
     cursor: pointer;
-    margin: 10px 0;
 }
 
 button:hover {
     background-color: #003a8d;
 }
 
-p {
-    color: #FF0000;
-    text-align: center;
+.cerrar-modal {
+    width:8%;
+    padding: 5px;
+    margin: 10px 0;
+    border-radius: 7px;
+    border: 1px solid #ccc;
 }
 
-#mensajeRegistro, #mensajeLogin, #mensajeGlobal {
-    color: green;
-}
-
-button.volver {
-    background-color: #999;
-}
-
-button.volver:hover {
-    background-color: #777;
+.cerrar-modal:hover {
+    color: #003a8d; /* Cambiar el color al pasar el ratón */
 }

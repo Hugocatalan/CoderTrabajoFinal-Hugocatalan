@@ -1,0 +1,115 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+/* Estilos del Navbar */
+.navbar {
+    background-color: #004FB4; /* Color de fondo del navbar */
+    color: white; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno */
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between; /* Espacia los elementos en los extremos */
+    align-items: center; /* Centra verticalmente los elementos */
+}
+
+.navbar-brand {
+    font-size: 24px; /* Tamaño del texto del nombre del sitio */
+}
+
+.navbar-menu {
+    display: flex;
+    margin-right: 10px;
+    gap: 15px; /* Espacio entre los enlaces, ajustado para estar más cerca */
+}
+
+.navbar-menu a {
+    color: white; /* Color del texto del enlace */
+    text-decoration: none; /* Sin subrayado */
+    font-size: 18px; /* Tamaño del texto */
+}
+
+.navbar-menu a:hover {
+    text-decoration: underline; /* Subrayar al pasar el mouse */
+}
+
+.navbar-login {
+    display: flex;
+    align-items: center; /* Centra verticalmente el icono */
+    margin-left: 15px; /* Espacio entre el menú y el icono */
+}
+
+.login-icon {
+    width: 24px; /* Ajusta el tamaño del icono */
+    height: 24px;
+}
+
+
+
+
+
+
+
+/* Estilos para los últimos tres productos en una fila */
+#ultimosTres {
+    display: flex;
+    gap: 20px; /* Espacio entre las tarjetas */
+    justify-content: center; /* Centrar las tarjetas */
+    margin-top: 20px;
+}
+.producto{
+    
+        border: 1px solid #080808;
+        border-radius: 8px;
+        padding: 10px;
+        text-align: center;
+        background-color: #f9f9f9;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+        width: 100%; /* Asegura que cada tarjeta ocupe el ancho completo dentro de su celda */
+        margin-bottom: 10px; /* Espacio adicional entre tarjetas, si es necesario */
+    
+}
+.producto:hover {
+    transform: scale(1.05); /* Efecto de agrandamiento al pasar el mouse */
+}
+/* Estilos para el contenedor de todos los productos en una cuadrícula de 4 columnas */
+#todosProductos {
+    display: grid;
+    grid-template-columns: repeat(4,1fr); /* 4 columnas */
+    gap: 10px; /* Espacio entre las tarjetas */
+    margin-top: 10px;
+}
+
+/* Estilo de cada tarjeta de producto */
+.todos {
+    border: 1px solid #080808;
+    border-radius: 8px;
+       text-align: center;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    width: 100%; /* Asegura que cada tarjeta ocupe el ancho completo dentro de su celda */
+    margin-bottom: 20px; /* Espacio adicional entre tarjetas, si es necesario */
+}
+
+ .todos:hover {
+    transform: scale(1.05); /* Efecto de agrandamiento al pasar el mouse */
+}
+
+/* Estilo para los encabezados y párrafos dentro de las tarjetas */
+.todos h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.todos p {
+    font-size: 14px;
+    color: #666;
+    margin: 4px 0;
+}
+
