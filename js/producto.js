@@ -235,6 +235,25 @@ function limpiarFormulario() {
     document.getElementById("imagen").value = '';
 }
 
+// Función para mostrar el nombre del usuario en el navbar
+function mostrarUsuario() {
+    // Recuperamos el nombre del usuario desde localStorage
+    const usuarioNombre = localStorage.getItem('usuarioNombre');
+
+    // Verificamos si el nombre existe en localStorage
+    if (usuarioNombre) {
+        // Asignamos el nombre del usuario al elemento con id 'usuarioNombre'
+        document.getElementById("usuarioNombre").textContent = usuarioNombre;
+        // Hacemos visible el div que contiene el nombre
+        document.getElementById("navbarUser").style.display = "block";
+    } else {
+        console.log("El nombre del usuario no está en localStorage");
+    }
+}
+
+// Llamar a la función cuando el documento esté listo (una vez cargado el DOM)
+document.addEventListener("DOMContentLoaded", mostrarUsuario);
+
 // Event listeners
 document.getElementById("btnAgregarProducto").addEventListener("click", agregarProducto);
 document.getElementById("btnCargarProducto").addEventListener("click", cargarProducto);

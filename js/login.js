@@ -73,7 +73,16 @@ function registrarUsuario() {
 
 let intentosFallidos = 0;
 
-// Inicio de sesión de usuario
+// Función para restablecer los intentos después de un tiempo
+function restablecerIntentos() {
+    setTimeout(() => {
+        intentosFallidos = 0;
+        mostrarMensaje('mensajeLogin', "", false);
+        document.getElementById("formLogin").style.display = "block";
+    }, 30000);  // 30 segundos
+}
+
+
 function iniciarSesion() {
     const nombre = document.getElementById("nombreLogin").value;
     const contraseña = document.getElementById("contraseñaLogin").value;
@@ -86,19 +95,40 @@ function iniciarSesion() {
     const usuarioEncontrado = usuarios.find(usuario => usuario.nombre === nombre && usuario.contraseña === contraseña);
 
     if (usuarioEncontrado) {
+        // Guardamos el nombre en el localStorage
+        localStorage.setItem('usuarioNombre', nombre);
+        
         mostrarMensaje('mensajeLogin', mensajes.accesoConcedido(nombre));
         setTimeout(() => {
-            window.location.href = "html/productos.html";
-        }, 1000);
+            window.location.href = "./html/productos.html";
+        }, 2000);
     } else {
         intentosFallidos++;
-        mostrarMensaje('mensajeLogin', `${mensajes.usuarioIncorrecto} ${mensajes.intentosRestantes(intentosFallidos)}`, true);
-        document.getElementById("nombreLogin").value = "";
-        document.getElementById("contraseñaLogin").value = "";
-
         if (intentosFallidos >= 3) {
             mostrarMensaje('mensajeLogin', mensajes.maxIntentos, true);
             document.getElementById("formLogin").style.display = "none";
+            restablecerIntentos();
+        } else {
+            mostrarMensaje('mensajeLogin', mensajes.usuarioIncorrecto, true);
+            mostrarMensaje('mensajeLogin', mensajes.intentosRestantes(intentosFallidos), true);
         }
     }
 }
+
+function mostrarUsuario() {
+    // Recuperamos el nombre del usuario desde el localStorage
+    const usuarioNombre = localStorage.getItem('usuarioNombre'); // Asegúrate de que el nombre esté guardado correctamente
+
+    // Verificamos si el nombre existe en localStorage
+    if (usuarioNombre) {
+        // Asignamos el nombre del usuario al elemento con id 'usuarioNombre'
+        document.getElementById("usuarioNombre").textContent = usuarioNombre;
+        // Hacemos visible el div que contiene el nombre
+        document.getElementById("navbarUser").style.display = "block";
+    } else {
+        console.log("El nombre del usuario no está en localStorage");
+    }
+}
+
+// Llamar a la función cuando el documento esté listo (una vez cargado el DOM)
+document.addEventListener("DOMContentLoaded", mostrarUsuario);

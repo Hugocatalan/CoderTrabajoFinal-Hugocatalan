@@ -14,12 +14,16 @@
     <nav class="navbar">
         <div class="navbar-container">
             <div class="navbar-brand">Mi Sitio Web</div>
+            <div id="navbarUser" style="display: none; padding: 10px;">
+                <span id="usuarioNombre"></span> <!-- Aquí se mostrará el nombre del usuario -->
+            </div>
+            <div class="navbar-menu">
+                <a href="../index.html">Inicio</a>
+                <a href="#productos">Productos</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+            
             <div class="navbar-login">
-                <div class="navbar-menu">
-                    <a href="../index.html">Inicio</a>
-                    <a href="#productos">Productos</a>
-                    <a href="#contacto">Contacto</a>
-                </div>
                 <a href="" id="modal-abrir">
                     <img src="../img/loginmanager_10029.png" alt="Login" class="login-icon">
                 </a>
@@ -34,6 +38,7 @@
             <button id="btnAgregarProducto">Agregar Producto</button>
         </div>
     </div>
+
     <!-- Formulario para agregar producto -->
     <div id="formularioContainer" style="display:none;">
         <h2>Agregar Producto</h2>
@@ -61,7 +66,5 @@
     </div>
 
     <script src="../js/producto.js"></script>
-    
-
 </body>
 </html>
