@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/login.css">
     <link rel="stylesheet" href="../css/productos.css">
+   
     
     <title>Productos</title>
 </head>
@@ -21,9 +22,8 @@
             </div>
             <div class="navbar-menu">
                 <a href="../index.html">Inicio</a>
-                    <a href="#tecnologia">Tecnologia</a>
-                    <a href="#indumentaria">Indumentaria</a>
-                    <a href="#hogar">Hogar</a>
+                <a href="./carrito.html">Carrito</a>
+                   
                     <a href="./carrito.html" id="contadorCarrito"  class="bi bi-cart-fill contador">0</a>
 
             </div>
@@ -35,7 +35,7 @@
             </div>
         </div>
     </nav>
-
+<div class="contenido">
     <!-- Botón para agregar producto -->
     <div class="contenedorFila">
         <div class="sumarProducto">
@@ -45,7 +45,7 @@
     </div>
 
     <!-- Formulario para agregar producto -->
-    <div id="formularioContainer" style="display:none;">
+    <div id="formularioContainer" style="display:none;" class="formularioContainer">
         <h2>Agregar Producto</h2>
         <form>
             <input type="text" id="nombre" placeholder="Nombre del Producto">
@@ -69,7 +69,8 @@
         <span id="totalCompra" style="display:none;"></span></span>
         <button id="finalizarCompra" style="display:none;"></button>
     </div>
-
+</div>
     <script src="../js/producto.js"></script>
+    <script src="../js/fondo.js"> </script>
 </body>
 </html>

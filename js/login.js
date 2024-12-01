@@ -1,9 +1,15 @@
 // Elementos de la interfaz modal
 const modalContainer = document.getElementById("modal-container");
 const modalAbrir = document.getElementById("modal-abrir");
+const modalAbrir2 = document.getElementById("modal-abrir2");
 const modalCerrar = document.getElementById("modal-cerrar");
 
 modalAbrir.addEventListener("click", (e) => {
+    e.preventDefault();
+    modalContainer.classList.toggle("modal-activo");
+});
+
+modalAbrir2.addEventListener("click", (e) => {
     e.preventDefault();
     modalContainer.classList.toggle("modal-activo");
 });

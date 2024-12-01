@@ -1,11 +1,11 @@
 const productos = [
-    { nombre: "NOTEBOOK", precio: 100000, stock: 10, imagen: "https://via.placeholder.com/150" },
-    { nombre: "COMPUTADORA", precio: 80000, stock: 20, imagen: "https://via.placeholder.com/150" },
-    { nombre: "TV", precio: 50000, stock: 40, imagen: "https://via.placeholder.com/150" },
-    { nombre: "SMARTPHONE", precio: 60000, stock: 25, imagen: "https://via.placeholder.com/150" },
-    { nombre: "MAUSE", precio: 100000, stock: 10, imagen: "https://via.placeholder.com/150" },
-    { nombre: "CONTROL", precio: 80000, stock: 20, imagen: "https://via.placeholder.com/150" },
-    { nombre: "RADIO", precio: 50000, stock: 40, imagen: "https://via.placeholder.com/150" },
+    { nombre: "NOTEBOOK", precio: 100000, stock: 10, imagen: "../img/notbook.jpg" },
+    { nombre: "COMPUTADORA", precio: 80000, stock: 20, imagen: "../img/computadora.jpg" },
+    { nombre: "TV", precio: 50000, stock: 40, imagen: "../img/tv.jpg" },
+    { nombre: "SMARTPHONE", precio: 60000, stock: 25, imagen: "../img/SMARTPHONE.jpg" },
+    { nombre: "MAUSE", precio: 100000, stock: 10, imagen: "../img/mause.jpg" },
+    { nombre: "CONTROL", precio: 80000, stock: 20, imagen: "../img/control.jpg" },
+    { nombre: "RADIO", precio: 50000, stock: 40, imagen: "../img/radio.jpg" },
 ];
 
 // Selectores

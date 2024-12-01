@@ -1,7 +1,23 @@
-body {
-    font-family: Arial, sans-serif;
+/* Asegura que el fondo cubra toda la pantalla, incluso cuando hay scroll */
+html, body {
     margin: 0;
+    padding: 0;
+    height: 100%; /* Asegura que ocupen toda la pantalla */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Mantiene el fondo fijo mientras se hace scroll */
+    font-family: Arial, sans-serif;
 }
+
+/* Estilo del contenido para que quede encima del fondo */
+.contenido {
+    z-index: 1; /* Asegura que el contenido se superponga al fondo */
+    position: relative;
+    margin-top: 20px;
+}
+
+/* Barra de navegación */
 .navbar-container {
     display: flex;
     justify-content: space-between;
@@ -33,6 +49,7 @@ body {
     animation: fadeIn 2s ease-out;
 }
 
+/* Animación de entrada */
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -44,12 +61,11 @@ body {
     }
 }
 
+/* Estilo de los productos */
 .sumarProducto {
-    border: 1px solid #ccc;
+    border: 1px solid #cccccc46;
     border-radius: 8px;
-    padding: 10px;
     text-align: center;
-    background-color: #f9f9f9;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
     width: 200px;
@@ -67,13 +83,14 @@ body {
 .contenedorFila {
     display: flex;
     margin-top: 10px;
-    justify-content: center; 
+    justify-content: center;
+    
 }
 
 button {
     background-color: #00C896;
     color: white;
-    padding: 10px 20px;
+    padding: 10px;
     border: none;
     border-radius: 8px;
     font-size: 1em;
@@ -84,11 +101,7 @@ button:hover {
     background-color: #00a380;
 }
 
-#formularioContainer {
-    margin-top: 10px;
-    text-align: center;
-    display: none;
-}
+
 
 form input[type="text"],
 form input[type="number"],
@@ -107,6 +120,7 @@ form button {
     color: white;
 }
 
+/* Estilo de los productos */
 .productos-container {
     display: flex;
     flex-wrap: wrap;
@@ -116,11 +130,11 @@ form button {
 }
 
 .producto {
-    border: 1px solid #ccc;
+    border: 1px solid #fdfbfbd8;
+    background-color: #cccccc79;
     border-radius: 8px;
     padding: 10px;
     text-align: center;
-    background-color: #f9f9f9;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
     width: 200px;
@@ -135,6 +149,8 @@ form button {
     height: 150px;
     object-fit: contain;
 }
+
+/* Animación de salto */
 @keyframes salto {
     0% {
         transform: translateY(0);
@@ -147,6 +163,7 @@ form button {
     }
 }
 
+/* Animación de luz */
 @keyframes luz {
     0%, 100% {
         box-shadow: 0 0 5px rgba(0, 255, 0, 0.7), 0 0 15px rgba(0, 255, 0, 0.5), 0 0 30px rgba(0, 255, 0, 0.3);
@@ -165,4 +182,22 @@ form button {
     border-radius: 5px;
     background: linear-gradient(135deg, #004fb4, #1d1b20);
     text-shadow: 0 0 5px #000;
+}
+#btnCargarProducto {
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    width: 80%;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #004FB4;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    text-align: center;
+}
+
+#btnCargarProducto:hover {
+    background-color: #003a8f;
 }

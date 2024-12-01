@@ -1,16 +1,17 @@
 /* Estilos generales para el carrito */
 .cart-container {
-    width: 80%;
+    width: 35%;
     max-width: 1000px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #f4f4f4;
+    background-color: #cccccc79;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     font-family: Arial, sans-serif;
 }
 
 h1 {
+    
     text-align: center;
     color: #004FB4;
     margin-bottom: 20px;
@@ -70,12 +71,14 @@ button:hover {
 }
 
 a {
+    
     display: block;
     text-align: center;
     margin-top: 15px;
     color: #004FB4;
     text-decoration: none;
     font-weight: bold;
+   
 }
 
 a:hover {
@@ -85,7 +88,7 @@ a:hover {
 /* Respuesta para dispositivos móviles */
 @media (max-width: 768px) {
     .cart-container {
-        width: 95%;
+        width: 35%;
     }
 
     #listaCarrito li {

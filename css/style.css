@@ -1,47 +1,58 @@
-body {
-    font-family: 'Poppins', sans-serif;
+html, body {
     margin: 0;
-    background-color: #F5F5F5; 
+    padding: 0;
+    height: 100%; /* Asegura que ocupen toda la pantalla */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Mantiene el fondo fijo mientras se hace scroll */
+    font-family: Arial, sans-serif;
 }
 
 /* Estilo de Bienvenida */
-.bienvenida {
-    color: #00C896; 
-    text-align: center;
-    font-size: 2.5em;
-    margin-top: 40px;
-    font-weight: 600;
-}
 
-.bienvenida span {
-    color: #FFCE00; 
-}
-
-.llamado-accion {
-    color: #1D1B20;
-    text-align: center;
-    font-size: 1.2em;
-    background-color: #FFF8E1;
-    padding: 10px 20px;
-    border-radius: 8px;
-    display: inline-block;
-    margin: 15px auto;
-    font-weight: 500;
-}
-
-/* Estilos del Navbar */
-.navbar {
+    .bienvenida {
+        
+        text-align: center;
+        font-size: 3em;
+        margin-top: 40px;
+        font-weight: 600;
+        
+    }
     
-    background-color: #004FB4; 
+    .bienvenida span {
+        font-size: 1.5em;
+       
+    }
+    
+
+    .llamado-accion {
+       
+        text-align: center;
+        font-size: 2em;
+        border-radius: 8px;
+        font-weight: 500;
+    }
+
+    .bd{
+        display: inline; 
+        background-color: #f5f5f55e;
+               text-shadow:  0 0 1px rgba(0, 0, 0, 0.8), 
+                     0 0 30px white;   
+        
+    }
+
+.navbar {    
     color: white;
-    padding: 10px 10px;
-    
+    padding: 10px;
 }
 
-.navbar-container {
+div.navbar-container {
+    background-color: #0a000080;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly; 
     align-items: center;
+    padding: 3px 20px;
 }
 
 .navbar-brand {
@@ -52,36 +63,69 @@ body {
 
 .navbar-menu {
     display: flex;
-    gap: 20px;
+    gap: 20px; /* Espacio entre los enlaces */
 }
 
 .navbar-menu a {
     color: white;
     text-decoration: none;
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 24px;
+    font-weight: 700;
 }
 
 .navbar-menu a:hover {
     color: #FFCE00;
 }
 
-/* Alineación y estilo de la imagen de login */
+
 .navbar-login {
     display: flex;
     align-items: center;
-    gap: 10px; /* Espacio entre el menú y el icono */
+    gap: 10px; 
 }
-
 
 .login-icon {
-    width: 38px;
-    height: 38px;
+    width: 60px;
+    height: 60px;
     cursor: pointer;
 }
- .ini{
-    padding-left: 3rem;
-    padding-right: 3.25rem;
+
+.centrar-ingre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+   
+}
+
+.ingre {
+    width: 150px; 
+    height: auto; 
+    transition: transform 0.3s ease, opacity 0.3s ease; 
+    animation: mover-lados 4s ;
+
+}
+    @keyframes mover-lados {
+        0% {
+            transform: translateX(0); /* Posición inicial */
+        }
+        25% {
+            transform: translateX(-10px); /* Mueve a la izquierda */
+        }
+        50% {
+            transform: translateX(10px); /* Mueve a la derecha */
+        }
+        75% {
+            transform: translateX(-10px); /* Regresa a la izquierda */
+        }
+        100% {
+            transform: translateX(0); /* Vuelve al centro */
+        }
+    }
     
- }
- 
+    
+
+.ingre:hover {
+    transform: scale(1.1); 
+    opacity: 0.8; 
+}
