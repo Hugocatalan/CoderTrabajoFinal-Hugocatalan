@@ -14,7 +14,7 @@ modalCerrar.addEventListener("click", () => {
 
 // Obtener usuarios registrados desde localStorage o inicializar
 let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [
-    { nombre: "Hugo", contraseña: "123" }
+    { nombreCompleto: "Hugo Catalan", nombre:"Hugo", contraseña: "123" }
 ];
 
 // Mensajes del sistema
@@ -49,27 +49,39 @@ function volverAlMenu() {
     document.getElementById("tituloPrincipal").textContent = "Registro e Inicio de Sesión";
 }
 
+
 // Registro de nuevo usuario
 function registrarUsuario() {
-    const nombre = document.getElementById("nombreRegistro").value;
+    const nombreCompleto = document.getElementById("nombreCompleto").value;
+    const nombreRegistro = document.getElementById("nombreRegistro").value;
     const contraseña = document.getElementById("contraseñaRegistro").value;
 
-    if (!nombre || !contraseña) {
+    if (!nombreCompleto || !nombreRegistro || !contraseña) {
         mostrarMensaje('mensajeRegistro', "Todos los campos son obligatorios", true);
         return;
     }
 
-    if (usuarios.some(usuario => usuario.nombre === nombre)) {
+    if (usuarios.some(usuario => usuario.nombreRegistro === nombreRegistro)) {
         mostrarMensaje('mensajeRegistro', mensajes.usuarioExistente, true);
     } else {
-        usuarios.push({ nombre, contraseña });
-        // Guardar usuarios en localStorage
+        usuarios.push({ nombreCompleto, nombreRegistro, contraseña });
         localStorage.setItem("usuarios", JSON.stringify(usuarios));
-        mostrarMensaje('mensajeRegistro', mensajes.usuarioRegistrado(nombre));
+        mostrarMensaje('mensajeRegistro', mensajes.usuarioRegistrado(nombreCompleto));
+
+        // Limpiar los campos del formulario de registro
+        document.getElementById("nombreCompleto").value = "";
         document.getElementById("nombreRegistro").value = "";
         document.getElementById("contraseñaRegistro").value = "";
+
+        // Redirigir al formulario de inicio de sesión después de 1 segundo
+        setTimeout(() => {
+            document.getElementById("registroForm").style.display = "none";
+            document.getElementById("loginForm").style.display = "block";
+            document.getElementById("tituloPrincipal").textContent = "Inicia Sesión";
+        }, 1000);
     }
 }
+
 
 let intentosFallidos = 0;
 
@@ -79,26 +91,24 @@ function restablecerIntentos() {
         intentosFallidos = 0;
         mostrarMensaje('mensajeLogin', "", false);
         document.getElementById("formLogin").style.display = "block";
-    }, 30000);  // 30 segundos
+    }, 20000); // 20 segundos
 }
 
-
+// Función para iniciar sesión
 function iniciarSesion() {
-    const nombre = document.getElementById("nombreLogin").value;
+    const nombreRegistro = document.getElementById("nombreLogin").value;
     const contraseña = document.getElementById("contraseñaLogin").value;
 
-    if (!nombre || !contraseña) {
+    if (!nombreRegistro || !contraseña) {
         mostrarMensaje('mensajeLogin', "Todos los campos son obligatorios", true);
         return;
     }
 
-    const usuarioEncontrado = usuarios.find(usuario => usuario.nombre === nombre && usuario.contraseña === contraseña);
+    const usuarioEncontrado = usuarios.find(usuario => usuario.nombreRegistro === nombreRegistro && usuario.contraseña === contraseña);
 
     if (usuarioEncontrado) {
-        // Guardamos el nombre en el localStorage
-        localStorage.setItem('usuarioNombre', nombre);
-        
-        mostrarMensaje('mensajeLogin', mensajes.accesoConcedido(nombre));
+        localStorage.setItem('nombreCompleto', usuarioEncontrado.nombreCompleto);
+        mostrarMensaje('mensajeLogin', mensajes.accesoConcedido(usuarioEncontrado.nombreCompleto));
         setTimeout(() => {
             window.location.href = "./html/productos.html";
         }, 2000);
@@ -115,20 +125,16 @@ function iniciarSesion() {
     }
 }
 
+// Mostrar información del usuario
 function mostrarUsuario() {
-    // Recuperamos el nombre del usuario desde el localStorage
-    const usuarioNombre = localStorage.getItem('usuarioNombre'); // Asegúrate de que el nombre esté guardado correctamente
-
-    // Verificamos si el nombre existe en localStorage
-    if (usuarioNombre) {
-        // Asignamos el nombre del usuario al elemento con id 'usuarioNombre'
-        document.getElementById("usuarioNombre").textContent = usuarioNombre;
-        // Hacemos visible el div que contiene el nombre
+    const nombreCompleto = localStorage.getItem('nombreCompleto');
+    if (nombreCompleto) {
+        document.getElementById("nombreCompleto").textContent = nombreCompleto;
         document.getElementById("navbarUser").style.display = "block";
     } else {
         console.log("El nombre del usuario no está en localStorage");
     }
 }
 
-// Llamar a la función cuando el documento esté listo (una vez cargado el DOM)
+// Ejecutar al cargar la página
 document.addEventListener("DOMContentLoaded", mostrarUsuario);

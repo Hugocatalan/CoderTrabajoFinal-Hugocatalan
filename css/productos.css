@@ -147,10 +147,22 @@ form button {
     }
 }
 
+@keyframes luz {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(0, 255, 0, 0.7), 0 0 15px rgba(0, 255, 0, 0.5), 0 0 30px rgba(0, 255, 0, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 10px rgba(0, 255, 0, 1), 0 0 20px rgba(0, 255, 0, 0.8), 0 0 40px rgba(0, 255, 0, 0.6);
+    }
+}
+
 #usuarioNombre {
     display: inline-block;
-    animation: salto 0.5s ease-in-out infinite;
-    animation-duration: 0.5s; /* Duración de un ciclo */
-    animation-timing-function: ease-in-out; /* Efecto de aceleración y desaceleración */
-    animation-iteration-count: 15; /* Número de repeticiones para 15 segundos (15s / 0.5s = 30 ciclos) */
+    color: #fff;
+    font-weight: bold;
+    animation: salto 0.5s ease-in-out infinite, luz 1s ease-in-out infinite;
+    padding: 10px;
+    border-radius: 5px;
+    background: linear-gradient(135deg, #004fb4, #1d1b20);
+    text-shadow: 0 0 5px #000;
 }

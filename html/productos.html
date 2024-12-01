@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/login.css">
     <link rel="stylesheet" href="../css/productos.css">
+    
     <title>Productos</title>
 </head>
 <body>
@@ -19,8 +21,11 @@
             </div>
             <div class="navbar-menu">
                 <a href="../index.html">Inicio</a>
-                <a href="#productos">Productos</a>
-                <a href="#contacto">Contacto</a>
+                    <a href="#tecnologia">Tecnologia</a>
+                    <a href="#indumentaria">Indumentaria</a>
+                    <a href="#hogar">Hogar</a>
+                    <a href="./carrito.html" id="contadorCarrito"  class="bi bi-cart-fill contador">0</a>
+
             </div>
             
             <div class="navbar-login">
@@ -59,10 +64,10 @@
 
     <!-- Carrito de compras -->
     <div class="cart-container">
-        <h2>Carrito de Compras</h2>
+        <h2></h2>
         <ul id="carrito" class="cart-items"></ul>
-        <p>Total: $<span id="totalCompra">0</span></p>
-        <button id="finalizarCompra" style="display:none;">Finalizar Compra</button>
+        <span id="totalCompra" style="display:none;"></span></span>
+        <button id="finalizarCompra" style="display:none;"></button>
     </div>
 
     <script src="../js/producto.js"></script>

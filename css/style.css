@@ -31,9 +31,11 @@ body {
 
 /* Estilos del Navbar */
 .navbar {
+    
     background-color: #004FB4; 
     color: white;
-    padding: 15px 20px;
+    padding: 10px 10px;
+    
 }
 
 .navbar-container {
@@ -71,8 +73,15 @@ body {
     gap: 10px; /* Espacio entre el menú y el icono */
 }
 
+
 .login-icon {
-    width: 28px;
-    height: 28px;
+    width: 38px;
+    height: 38px;
     cursor: pointer;
 }
+ .ini{
+    padding-left: 3rem;
+    padding-right: 3.25rem;
+    
+ }
+ 
